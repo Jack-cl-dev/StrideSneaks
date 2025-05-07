@@ -97,8 +97,17 @@ body {
 }
 
 /* This is the styling */
+.topnav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #252424;
+    height: 50px;
+    gap: 20px;
+    flex-direction: row;
+}
+
 .topnav a {
-    float: right;
     color: #f2f2f2;
     text-align: center;
     padding: 14px 16px;
@@ -107,6 +116,7 @@ body {
     font-family: 'Inter', sans-serif;
     transition: background-color 0.3s, color 0.3s;
 }
+
 
 /* This changes the color of links on hover (WIP) */
 .topnav a:hover {

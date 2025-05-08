@@ -45,7 +45,19 @@ body {
 }
 .Main-heading {
     color: #ffffff;
-    text-align: center;
+    text-align: left;
     font-size: 75px;
     font-family: 'Inter Semi Bold', sans-serif;
+}
+
+.container {
+    display: flex;
+    color: #ffffff;
+    font-family: 'Inter Semi Bold', sans-serif;
+    font-size: 75px;
+}
+
+.placeholder {
+    margin: 6px;
+    margin-left: 100px;
 }

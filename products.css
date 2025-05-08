@@ -1,5 +1,5 @@
 :root {
-    --bg-color: #030303;
+    --bg-color: #ffffff;
     --text-color: #ffffff;
     --primary-colour: #0600c2;
     --secondary-colour: #020024;
@@ -54,7 +54,7 @@ body {
     font-weight: bold;
     margin: 5px 0 15px;
 }
-/* gradient that took way, way too long and too many tutorials to figure out. */
+
 .buy-button {
     position: relative;
     display: inline-block;
@@ -67,7 +67,7 @@ body {
     background-image: none;
     transition: none;
 }
-
+/* gradient that took way, way too long and too many tutorials to figure out. */
 .buy-button span {
     position: relative;
     z-index: 2;

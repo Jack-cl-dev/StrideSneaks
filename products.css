@@ -86,7 +86,7 @@ body {
     border-radius: inherit;
 }
 
-/* On hover, fade it in */
+/* On hover, fade gradient in */
 .buy-button:hover::before {
     opacity: 1;
 }

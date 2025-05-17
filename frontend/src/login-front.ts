@@ -1,5 +1,3 @@
-//actually try to add some documentation to this
-
 //hash password string (this is more for fun than any actual real security)
 async function hashPassword(password: string): Promise<string> {
     const encoder = new TextEncoder();
@@ -24,8 +22,22 @@ document.addEventListener("DOMContentLoaded", () => {
         const username = usernameInput.value;
         const password = passwordInput.value;
 
-        console.log(username, password);
+        console.log(username, password, hashedpassword);
 
-        // TODO: send to backend
+        try {
+            const response = await fetch("http://localhost:3000/api/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ username, password: hashedpassword })
+            });
+            const data = await response.json();
+            alert(data.message); //should return the messages from the backend
+            console.log(data.message);
+        }
+        catch (error) {
+            console.log(error);
+        }
     });
 });

@@ -1,0 +1,14 @@
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color);
+    padding-top: 100px;
+}
+
+form {
+    color: white;
+    font-family: 'Inter', sans-serif;
+    padding-bottom: 200px;
+}
+

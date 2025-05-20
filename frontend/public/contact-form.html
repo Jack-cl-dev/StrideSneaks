@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="contact-form.css">
+    <link rel="stylesheet" href="universal.css">
+</head>
+<body>
+<div class="topnav">
+    <a href="home.html">Home</a>
+    <a href="products.html">Products</a>
+    <a class="active" href="about.html">About</a>
+</div>
+<div class="form-container">
+    <form>
+        <label for="FullName">Full Name</label><br>
+        <input type="text" id="FullName" name="firstName" required><br><br>
+
+        <label for="email">Email</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="products">Products</label><br>
+        <input type="radio" id="products" name="subject" value="Products" required><br><br>
+
+        <label for="feedback">Feedback</label><br>
+        <input type="radio" id="feedback" name="subject" value="Feedback" required><br><br>
+
+        <label for="other">Other</label><br>
+        <input type="radio" id="other" name="subject" value="Other" required><br><br>
+
+        <label for="message">Message</label><br>
+        <textarea id="message" name="message" required></textarea><br><br>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<footer>
+    <p1>Legal</p1>
+    <p2>Privacy</p2>
+    <p3>Terms</p3>
+    <a class="form-link" href="contact-form.html">Contact</a>
+</footer>
+</body>
+</html>

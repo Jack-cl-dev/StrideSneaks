@@ -2,6 +2,7 @@
 - [X] Create the Home page
 - [X] Create the Products page
 - [X] Create the about page
+Added extras:
 - [X] Create navbar
 - [X] Add a footer
 - [X] Create login page UI

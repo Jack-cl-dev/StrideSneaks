@@ -5,7 +5,9 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/backend.js",
-    "dev": "ts-node src/backend.ts"
+    "dev": "ts-node src/backend.ts",
+    "copy-frontend": "cp -r ../frontend/public ./public",
+    "postinstall": "npm run copy-frontend"
   },
   "dependencies": {
     "better-sqlite3": "^11.10.0",

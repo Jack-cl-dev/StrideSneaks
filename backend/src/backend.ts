@@ -30,11 +30,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
 
-const publicPath = path.resolve(__dirname, '../../frontend/public');
+const publicPath = path.join(__dirname, '../public');
 app.use(express.static(publicPath));
 app.get('/', (req, res) => {
-    res.sendFile(path.join(publicPath, 'home.html'));
+    res.sendFile(path.join(publicPath, 'index.html'));
 });
+
 // POST endpoint for login/registration or auth check
 app.post('/api/submit', async (req: Request, res: Response) => {
     console.log('Request body', req.body);

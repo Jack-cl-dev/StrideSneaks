@@ -3,6 +3,7 @@
 import express, { Request, Response } from 'express';
 import cors from 'cors';
 import Database from 'better-sqlite3';
+import path from "path";
 
 const db = new Database('./data/database.db');
 const insertData = (username: string, password: string) => {
@@ -23,6 +24,9 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
+
+const publicPath = path.join(__dirname, "..", "..", "frontend", "public");
+app.use(express.static(publicPath));
 
 // POST endpoint for login/registration or auth check
 app.post('/api/submit', async (req: Request, res: Response) => {

@@ -17,12 +17,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const usernameInput = document.getElementById("username") as HTMLInputElement;
         const passwordInput = document.getElementById("password") as HTMLInputElement;
+        const typeinput = document.getElementById("type") as HTMLInputElement;
 
         const hashedpassword = await hashPassword(passwordInput.value);
         const username = usernameInput.value;
         const password = passwordInput.value;
+        const type = typeinput.value;
 
-        console.log(username, password, hashedpassword);
+        console.log(username, password, hashedpassword, type);
 
         try {
             const response = await fetch("http://localhost:3000/api/submit", {
@@ -30,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify({ username, password: hashedpassword })
+                body: JSON.stringify({ username, password: hashedpassword, type })
             });
             const data = await response.json();
             alert(data.message); //should return the messages from the backend

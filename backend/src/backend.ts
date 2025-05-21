@@ -4,7 +4,7 @@ import express, { Request, Response } from 'express';
 import cors from 'cors';
 import Database from 'better-sqlite3';
 
-const db = new Database('./database.db');
+const db = new Database('./data/database.db');
 const insertData = (username: string, password: string) => {
     const query = `INSERT INTO users (username, password) VALUES (?, ?)`;
     db.prepare(query).run(username, password);

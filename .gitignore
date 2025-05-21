@@ -7,3 +7,8 @@
 /dataSources/
 /dataSources.local.xml
 /backend/node_modules/
+# SQLite database
+/backend/src/data/*.db
+# OS files
+.DS_Store
+Thumbs.db

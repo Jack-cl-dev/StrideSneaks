@@ -1,14 +1,11 @@
 // just a small backend using express for hosting the database and checking user data from the frontend
-//this is being odd with the github push
-
-
 import fs from 'fs';
 import express, { Request, Response } from 'express';
 import cors from 'cors';
 import Database from 'better-sqlite3';
 import path from "path";
 
-// Ensure the ./data directory exists (If I don't do this it a minor mistake will crash the entire deployment)
+// Ensure the ./data directory exists (If I don't do this a minor mistake will crash the entire deployment)
 const dataDir = path.resolve('./data');
 if (!fs.existsSync(dataDir)) {
     fs.mkdirSync(dataDir, { recursive: true });
@@ -33,9 +30,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
 
-const publicPath = path.join(__dirname, "..", "..", "frontend", "public");
+const publicPath = path.resolve(__dirname, '../../frontend/public');
 app.use(express.static(publicPath));
-
+app.get('/', (req, res) => {
+    res.sendFile(path.join(publicPath, 'home.html'));
+});
 // POST endpoint for login/registration or auth check
 app.post('/api/submit', async (req: Request, res: Response) => {
     console.log('Request body', req.body);
@@ -76,7 +75,10 @@ app.post('/api/submit', async (req: Request, res: Response) => {
 });
 
 // Start the server
-app.listen(3000, () => {
-    console.log('listening on port 3000');
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`listening on port ${PORT}`);
 });
 
+console.log("Serving static files from:", publicPath);
+console.log("home.html exists:", fs.existsSync(path.join(publicPath, 'home.html')));

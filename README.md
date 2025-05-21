@@ -5,6 +5,7 @@
 - [X] Create the about page
 - [X] Create navbar
 - [X] Add a footer
+- [X] Create the contact form 
 - [X] Create login page UI
 - [X] Add function: check inputed user details against database
 - [X] Create register page UI

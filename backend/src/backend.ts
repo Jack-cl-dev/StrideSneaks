@@ -1,10 +1,18 @@
 // just a small backend using express for hosting the database and checking user data from the frontend
 //this is being odd with the github push
+
+
+import fs from 'fs';
 import express, { Request, Response } from 'express';
 import cors from 'cors';
 import Database from 'better-sqlite3';
 import path from "path";
 
+// Ensure the ./data directory exists (If I don't do this it a minor mistake will crash the entire deployment)
+const dataDir = path.resolve('./data');
+if (!fs.existsSync(dataDir)) {
+    fs.mkdirSync(dataDir, { recursive: true });
+}
 const db = new Database('./data/database.db');
 const insertData = (username: string, password: string) => {
     const query = `INSERT INTO users (username, password) VALUES (?, ?)`;

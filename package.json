@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "npm --prefix frontend run build && cp -r frontend/dist backend/public",
+    "build": "cp -r frontend/public backend/public",
     "start": "node backend/dist/backend.js"
   }
 }

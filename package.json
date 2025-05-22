@@ -1,9 +1,7 @@
 {
-  "name": "fullstack",
-  "private": true,
   "scripts": {
-    "build": "npm --prefix frontend run build && npm --prefix backend run build",
-    "start": "node backend/dist/backend.js",
-    "postinstall": "npm --prefix frontend run build && cp -r frontend/public backend/public"
+    "build": "npm --prefix frontend run build && cp -r frontend/dist backend/public",
+    "start": "node backend/dist/backend.js"
   }
 }
+

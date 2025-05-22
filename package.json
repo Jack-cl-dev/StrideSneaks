@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "build": "npm --prefix frontend run build && tsc --project backend/tsconfig.json && cp -r frontend/public backend/public"
+    "start": "node backend/dist/backend.js",
+    "build": "npm run build --prefix frontend && tsc --project backend/tsconfig.json && cp -r frontend/dist backend/public"
   }
 }
 

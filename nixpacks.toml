@@ -1,0 +1,6 @@
+[phases.setup]
+nixpkgsArchive = "24.05"
+packages = ["nodejs", "npm"]
+
+[phases.install]
+cmds = ["npm install --include=dev"]

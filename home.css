@@ -1,9 +1,6 @@
 /* This is the code that places the images at the top of the page, its a bit broken but works so im not touching it  */
 .header {
     display: flex;
-    flex-wrap {
-        nowwrap: wrap;
-    }
     gap: 10px;
     justify-content: center;
     max-width: 1600px; /*This is one of the two size constraints that matter */
